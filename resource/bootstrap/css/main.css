@@ -1,0 +1,35 @@
+ul.pagination li {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #c2c5c7;
+    /* margin-right: 8px; */
+}
+ul.pagination{
+    display: block;
+}
+ul.pagination .active {
+    background: #007bff;
+    border: 1px solid #007bff;
+    /* color: #fff; */
+}
+
+ul.pagination .active a {
+    color: #fff;
+}
+
+div#example1_paginate a {
+    padding: 11px 14px;
+    border: 1px solid #337ab7;
+    margin-right: 9px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+div#example1_paginate {
+    padding: 10px;
+}
+
+div#example1_paginate a {
+    background: #3c8dbc;
+    color: #fff;
+}
