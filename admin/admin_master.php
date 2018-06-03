@@ -18,6 +18,11 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../resource/admin_asset/dist/css/skins/_all-skins.min.css">
 
+
+    <!--Datepicker CSS-->
+    <link rel="stylesheet" href="../resource/admin_asset/datepicker/css/bootstrap-datepicker3.css">
+
+
     <!-- DataTables -->
     <link rel="stylesheet" href="../resource/admin_asset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Morris chart -->
@@ -412,6 +417,11 @@
 <script src="../resource/admin_asset/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- DataTables -->
 <script src="../resource/admin_asset/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+
+
+<!--Datepicker JS-->
+<script src="../resource/admin_asset/datepicker/js/bootstrap-datepicker.js"></script>
+
 <!-- jvectormap -->
 <script src="../resource/admin_asset/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="../resource/admin_asset/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
@@ -446,5 +456,17 @@
         });
     });
 </script>
+
+
+
+<script>
+    $(function () {
+        $(".datepicker").datepicker()
+
+    });
+
+</script>
+
+
 </body>
 </html>
