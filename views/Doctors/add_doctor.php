@@ -18,23 +18,23 @@ require_once("../vendor/autoload.php");
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Add Doctor Information</title>
-
-    <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="../../resource/datepicker/css/bootstrap-datepicker3.css">
-    <link rel="stylesheet" href="../../resource/bootstrap/css/formstyle.css">
-    <style>
-        body {
-            background: antiquewhite;
-        }
-    </style>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!---->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Add Doctor Information</title>-->
+<!---->
+<!--    <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.css">-->
+<!--    <link rel="stylesheet" href="../../resource/datepicker/css/bootstrap-datepicker3.css">-->
+<!--    <link rel="stylesheet" href="../../resource/bootstrap/css/formstyle.css">-->
+<!--    <style>-->
+<!--        body {-->
+<!--            background: antiquewhite;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
 <div class="container">
 
     <h2 style="color: #442a8d;">Doctor Information Entry</h2>
@@ -137,8 +137,8 @@ require_once("../vendor/autoload.php");
 </script>
 
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->
 
 <!--        <strong> Profile Picture</strong>-->
 <!--        <input type="file" accept=".png, .jpg, .jpeg" name="profilePicture">-->

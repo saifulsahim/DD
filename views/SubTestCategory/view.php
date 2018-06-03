@@ -15,18 +15,9 @@ $obj->setData($_GET);
 $singleData=$obj->view();
 ?>
 
-<!
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../resource/bootstrap/js/bootstrap.min.js">
 
-</head>
-<body>
-
-<h1>Single Record Information- Sub Test Category</h1>
+<div class="col-md-8">
+<h1> Single Record Information- Sub Test Category</h1>
 <table class="table table-bordered table-striped">
     <?php
     echo "
@@ -66,7 +57,7 @@ $singleData=$obj->view();
 
 
 </table>
-
+</div>
 <script src="../../resource/bootstrap/js/jquery.js"></script>
 
 <script>
@@ -85,5 +76,3 @@ $singleData=$obj->view();
     )
 </script>
 
-</body>
-</html>

@@ -82,7 +82,7 @@ $price = $objsubtestcategories->indexbyprice($total->sub_test_id);
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <h3 style="color: #442a8d;width:100%; font-size:"> Payment Information Entry</h3>
+            <h3 style="color: #442a8d;width:100%; font-size:"> Invoice Information Entry</h3>
             <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.css">
             <link rel="stylesheet" href="../../resource/bootstrap/css/formstyle.css">
 

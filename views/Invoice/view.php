@@ -33,7 +33,7 @@ $singleData = $objInvoice->view();
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3 style="color: #442a8d;width:100%; font-size:">Active List- Payment Information Entry</h3>
+            <h3 style="color: #442a8d;width:100%; font-size:">Active List- Invoice Information </h3>
 
             <table class="table table-bordered table-striped">
 

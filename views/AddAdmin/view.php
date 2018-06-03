@@ -16,17 +16,8 @@ $singleData=$obj->view();
 
 ?>
 
-<!
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../resource/bootstrap/js/bootstrap.min.js">
-
-    <title>Document</title>
-</head>
-<body>
-<h1>Single Record Information - All Admin Information</h1>
+<div class="col-md-8">
+<h3>Single Record Information - All Admin Information</h3>
 <table class="table table-bordered table-striped">
 
 
@@ -72,7 +63,5 @@ $singleData=$obj->view();
 
 
 </table>
-
-</body>
-</html>
+</div>
 

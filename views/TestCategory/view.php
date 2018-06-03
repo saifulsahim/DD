@@ -1,12 +1,7 @@
 <?php
 require_once ("../vendor/autoload.php");
 
-//use App\Message\Message;
-//
-//$msg = Message::message();
-//
-//
-//echo "<div>  <div id='message'>  $msg </div>   </div>";
+
 
 $obj = new App\TestCategory\TestCategory();
 
@@ -15,17 +10,10 @@ $obj->setData($_GET);
 $singleData= $obj->view();
 ?>
 
-<!
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../resource/bootstrap/js/bootstrap.min.js">
-</head>
-<body>
 
-<h1>Single Record Information- Test Category</h1>
+
+<div class="col-md-8">
+<h1>  Single Record Information- Test Category</h1>
 <table class="table table-bordered table-striped">
 
  <?php
@@ -49,7 +37,7 @@ $singleData= $obj->view();
 
 
 </table>
-
+</div>
 <script src="../../resource/bootstrap/js/jquery.js"></script>
 
 <script>
@@ -68,5 +56,3 @@ $singleData= $obj->view();
     )
 </script>
 
-</body>
-</html>

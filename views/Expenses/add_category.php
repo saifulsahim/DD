@@ -29,8 +29,8 @@ require_once("../vendor/autoload.php");
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <h2 style="color: #442a8d;width:100%; font-size:"> Expense Category Information Entry</h2>
+        <div class="col-md-6">
+            <h3 style="color: #442a8d;width:100%; font-size:"> Expense Category Information Entry</h3>
 
             <form action="../views/Expenses/store.php" method="post">
 
