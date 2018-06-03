@@ -36,29 +36,33 @@ $singleData = $obj->view();
 </head>
 <body>
 <div class="container">
-
+<div class="col-md-4">
     <h2 style="color: #442a8d;">Admin Information Entry</h2>
 
     <form action="../views/AddAdmin/update.php" method="post">
 
 
+        <div class="form-group">
         <strong> Name:</strong>
-        <input type="text" name="adminName" value="<?php echo $singleData->admin_name ?>">
-        <br>
+        <input type="text" class="form-control"  name="adminName" value="<?php echo $singleData->admin_name ?>">
+        </div>
 
 
+        <div class="form-group">
         <strong> E-mail: </strong>
-        <input type="email" name="email" value="<?php echo $singleData->email ?>">
-        <br>
+        <input type="email" class="form-control" name="email" value="<?php echo $singleData->email ?>">
+        </div>
 
+        <div class="form-group">
         <strong> Password: </strong>
-        <input type="text" name="password" value="<?php echo $singleData->password ?>">
-        <br>
+        <input type="text" class="form-control" name="password" value="<?php echo $singleData->password ?>">
+        </div>
 
 
+        <div class="form-group">
         <strong> Confirm Password: </strong>
-        <input type="text" name="confirmPassword" value="<?php echo $singleData->confirm_password ?>">
-        <br>
+        <input type="text" class="form-control" name="confirmPassword" value="<?php echo $singleData->confirm_password ?>">
+        </div>
 
 
         <strong>Admin Role</strong>
@@ -83,7 +87,7 @@ $singleData = $obj->view();
         <button class=" btn btn-success" type="submit" name="submit">Save Changes</button>
 
     </form>
-
+</div>
 
 </div>
 

@@ -33,21 +33,34 @@ $doctors = $objDoctor->index();
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <h5 style="color: #442a8d;width:100%; font-size:"> Custom Doctor Wise Report Entry</h5>
+        <div class="col-md-3">
+
+
+        <h3 style="color: #442a8d;width:1000%; font-size:">  Custom Doctor Wise Report Entry</h3>
 
             <form action="admin_master.php?page=manage_custom_doctor_invoice" method="post">
 
 
-                <strong> From Date:</strong>
-                <input class="datepicker"   type="text" name="fromDate">
-                <br>
 
+                <div class="form-group">
+                    <label> From Date:</label>
+                    <input  type="text" class="form-control datepicker"  name="fromDate">
+                </div>
 
+                <div class="form-group">
+                    <label> To Date:</label>
+                    <input type="text" class="form-control datepicker"   name="toDate">
+                </div>
 
-                <strong> To Date:</strong>
-                <input class="datepicker"   type="text" name="toDate">
-                <br>
+<!--                <strong> From Date:</strong>-->
+<!--                <input class="datepicker"   type="text" name="fromDate">-->
+<!--                <br>-->
+<!---->
+<!---->
+<!---->
+<!--                <strong> To Date:</strong>-->
+<!--                <input class="datepicker"   type="text" name="toDate">-->
+<!--                <br>-->
 
 
 

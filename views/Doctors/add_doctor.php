@@ -42,9 +42,7 @@ require_once("../vendor/autoload.php");
     <div class="col-md-4">
     <form  action="../views/Doctors/store.php" method="post" enctype="multipart/form-data">
 
-<!--        <strong> Profile Picture</strong>-->
-<!--        <input type="file" accept=".png, .jpg, .jpeg" name="profilePicture">-->
-<!--        <br>-->
+
 
         <div class="form-group">
             <label>Profile Picture</label>
@@ -52,9 +50,6 @@ require_once("../vendor/autoload.php");
         </div>
 
 
-<!--        <strong> Doctor Name:</strong>-->
-<!--        <input type="text" name="doctorName">-->
-<!--        <br>-->
 
         <div class="form-group">
             <label>Doctor Name</label>
@@ -67,27 +62,20 @@ require_once("../vendor/autoload.php");
             <input type="text" name="fatherName" class="form-control"  placeholder="Enter name">
         </div>
 
-<!--        <strong> Father's Name: </strong>-->
-<!--        <input type="text" name="fatherName">-->
-<!--        <br>-->
+
 
         <div class="form-group">
             <label> Mother's Name: </label>
             <input type="text" name="motherName" class="form-control"  placeholder="Enter name">
         </div>
-<!---->
-<!--        <strong> Mother's Name: </strong>-->
-<!--        <input type="text" name="motherName">-->
-<!--        <br>-->
+
 
         <div class="form-group">
             <label> E-mail: </label>
             <input type="email" name="email" class="form-control"  placeholder="Enter mail">
         </div>
 
-<!--        <strong> E-mail: </strong>-->
-<!--        <input type="email" name="email">-->
-<!--        <br>-->
+
 
 
         <div class="form-group">
@@ -95,9 +83,9 @@ require_once("../vendor/autoload.php");
             <input type="text" name="mobileNo" class="form-control"  placeholder="Enter Mobile No">
         </div>
 
-<!--        <strong> Mobile No: </strong>-->
-<!--        <input type="text" name="mobileNo">-->
-<!--        <br>-->
+
+
+
 
         <strong> Contact Address: </strong>
         <textarea rows="2" class="form-control" name="contactAddress"></textarea>
@@ -109,23 +97,17 @@ require_once("../vendor/autoload.php");
 
         <div class="form-group">
             <label> Date of Birth: </label>
-            <input class="datepicker" class="form-control" type="text" name="birthDate">
+            <input class="form-control datepicker" class="form-control" type="text" name="birthDate">
         </div>
 
 
-<!--        <strong> Date of Birth</strong>-->
-<!--        <input class="datepicker" type="text" name="birthDate">-->
-<!--        <br>-->
 
         <div class="form-group">
             <label> Join Date: </label>
-            <input class="datepicker" class="form-control" type="text" name="joinDate">
+            <input class="form-control datepicker" class="form-control" type="text" name="joinDate">
         </div>
 
 
-<!--        <strong> Join Date </strong>-->
-<!--        <input class="datepicker" type="text" name="joinDate">-->
-<!--        <br>-->
 
 
         <button class=" btn btn-success" type="submit" name="submit">Submit</button>
@@ -137,13 +119,7 @@ require_once("../vendor/autoload.php");
 </div>
 <script src="../../resource/bootstrap/js/jquery.js"></script>
 <script src="../../resource/datepicker/js/bootstrap-datepicker.js"></script>
-<!--<script>-->
-<!--    $(function () {-->
-<!--        $('.datepicker').datepicker()-->
-<!---->
-<!--    });-->
-<!---->
-<!--</script>-->
+
 <script>
 
 
@@ -163,3 +139,46 @@ require_once("../vendor/autoload.php");
 
 </body>
 </html>
+
+<!--        <strong> Profile Picture</strong>-->
+<!--        <input type="file" accept=".png, .jpg, .jpeg" name="profilePicture">-->
+<!--        <br>-->
+
+<!--        <strong> Doctor Name:</strong>-->
+<!--        <input type="text" name="doctorName">-->
+<!--        <br>-->
+
+<!--        <strong> Father's Name: </strong>-->
+<!--        <input type="text" name="fatherName">-->
+<!--        <br>-->
+
+<!---->
+<!--        <strong> Mother's Name: </strong>-->
+<!--        <input type="text" name="motherName">-->
+<!--        <br>-->
+
+<!--        <strong> E-mail: </strong>-->
+<!--        <input type="email" name="email">-->
+<!--        <br>-->
+<!--        <strong> Mobile No: </strong>-->
+<!--        <input type="text" name="mobileNo">-->
+<!--        <br>-->
+
+
+<!--        <strong> Date of Birth</strong>-->
+<!--        <input class="datepicker" type="text" name="birthDate">-->
+<!--        <br>-->
+
+
+<!--        <strong> Join Date </strong>-->
+<!--        <input class="datepicker" type="text" name="joinDate">-->
+<!--        <br>-->
+
+
+<!--<script>-->
+<!--    $(function () {-->
+<!--        $('.datepicker').datepicker()-->
+<!---->
+<!--    });-->
+<!---->
+<!--</script>-->

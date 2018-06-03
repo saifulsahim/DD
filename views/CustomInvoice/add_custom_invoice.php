@@ -39,20 +39,21 @@ require_once("../vendor/autoload.php");
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h3 style="color: #442a8d;width:100%; font-size:"> Custom Invoice</h3>
 
             <form action="admin_master.php?page=manage_custom_invoice" method="post">
 
 
-                <strong> From Date:</strong>
-                <input  type="text" id="datepicker"  name="fromDate">
-                <br>
+                <div class="form-group">
+                <label> From Date:</label>
+                <input  type="text" class="form-control datepicker"  name="fromDate">
+                </div>
 
-
-                <strong> To Date:</strong>
-                <input type="text" id="datepicker2"   name="toDate">
-                <br>
+                <div class="form-group">
+                <label> To Date:</label>
+                <input type="text" class="form-control datepicker"   name="toDate">
+                </div>
 
 
                 <button class="btn btn-success" type="submit">View Report</button>

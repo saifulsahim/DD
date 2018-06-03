@@ -36,31 +36,40 @@ $singleData= $obj->view();
 
     <h2 style="color: #442a8d;">Doctor Information Entry</h2>
 
-    <form  action="../views/Doctors/update.php" method="post" enctype="multipart/form-data">
+    <div class="col-md-4">
 
-        <strong> Profile Picture</strong>
-        <input type="file" accept=".png, .jpg, .jpeg" name="profilePicture" value="<?php echo $singleData->profile_picture ?>">
-        <br>
+        <form  action="../views/Doctors/update.php" method="post" enctype="multipart/form-data">
 
-        <strong> Doctor Name:</strong>
-        <input type="text" name="doctorName" value="<?php echo $singleData->doctor_name ?>">
-        <br>
+        <div class="form-group">
+            <label>Profile Picture</label>
+            <input type="file" accept=".png, .jpg, .jpeg" name="profilePicture" class="form-control" value="<?php echo $singleData->profile_picture ?>">
+        </div>
 
-        <strong> Father's Name: </strong>
-        <input type="text" name="fatherName" value="<?php echo $singleData->father_name ?>">
-        <br>
 
-        <strong> Mother's Name: </strong>
-        <input type="text" name="motherName" value="<?php echo $singleData->mother_name ?>">
-        <br>
+        <div class="form-group">
+            <label>Doctor Name</label>
+            <input type="text" name="doctorName" class="form-control" value="<?php echo $singleData->doctor_name ?>">
+        </div>
 
-        <strong> E-mail: </strong>
-        <input type="email" name="email" value="<?php echo $singleData->email ?>">
-        <br>
+            <div class="form-group">
+                <label> Father's Name:</label>
+                <input type="text" name="fatherName" class="form-control" value="<?php echo $singleData->father_name ?>">
+            </div>
 
-        <strong> Mobile No: </strong>
-        <input type="text" name="mobileNo" value="<?php echo $singleData->mobile_no ?>">
-        <br>
+            <div class="form-group">
+                <label> Mother's Name: </label>
+                <input type="text" name="motherName" class="form-control" value="<?php echo $singleData->mother_name ?>">
+            </div>
+
+            <div class="form-group">
+                <label> E-mail: </label>
+                 <input type="email" name="email" class="form-control" value="<?php echo $singleData->email ?>">
+            </div>
+
+            <div class="form-group">
+                <label> Mobile No: </label>
+                <input type="text" name="mobileNo" class="form-control" value="<?php echo $singleData->mobile_no ?>">
+            </div>
 
         <strong> Contact Address: </strong>
         <textarea rows="2" class="form-control" name="contactAddress"><?php echo $singleData->contact_address ?></textarea>
@@ -71,12 +80,13 @@ $singleData= $obj->view();
         <br>
 
 
-        <strong> Date of Birth</strong>
-        <input class="datepicker" type="text" name="birthDate" value="<?php echo $singleData->birth_date ?>">
+            <div class="form-group">
+                <label> Date of Birth: </label>
+                <input class="form-control datepicker" type="text"  name="birthDate" value="<?php echo $singleData->birth_date ?>">
         <br>
 
         <strong> Join Date </strong>
-        <input class="datepicker" type="text" name="joinDate" value="<?php echo $singleData->join_date ?>">
+        <input class="form-control datepicker" type="text" name="joinDate" value="<?php echo $singleData->join_date ?>">
         <br>
 
 
@@ -86,6 +96,8 @@ $singleData= $obj->view();
         <button class=" btn btn-success" type="submit" name="submit" value="Update">Update</button>
 
     </form>
+    </div>
+
 
 
 </div>

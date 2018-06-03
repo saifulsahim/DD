@@ -9,7 +9,6 @@ if (isset($_POST['login'])) {
 }
 
 
-
 //if (!isset($_SESSION)) session_start();
 
 //use App\Message\Message;
@@ -39,43 +38,46 @@ if (isset($_POST['login'])) {
 <div class="container">
     <div class="col-md-4">
 
-    <h2 style="color: #442a8d;">Admin Information Entry</h2>
+        <h2 style="color: #442a8d;">Admin Information Entry</h2>
 
-    <form  action="../views/AddAdmin/store.php" method="post">
+        <form action="../views/AddAdmin/store.php" method="post">
 
-
-        <strong> Name:</strong>
-        <input type="text" name="adminName">
-        <br>
-
-
-        <strong> E-mail: </strong>
-        <input type="email" name="email">
-        <br>
-
-        <strong> Password: </strong>
-        <input type="password" name="password">
-        <br>
+            <div class="form-group">
+                <label> Name:</label>
+                <input class="form-control"  type="text" name="adminName">
+            </div>
 
 
-        <strong> Confirm Password: </strong>
-        <input type="password" name="confirmPassword">
-        <br>
+            <div class="form-group">
+                <strong> E-mail: </strong>
+                <input class="form-control" type="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <strong> Password: </strong>
+                <input class="form-control" type="password" name="password">
+            </div>
 
 
-
-        <strong>Admin Role</strong>
-        <select class="form-control" name="adminRole" id="adminRole">
-            <option>Select Role</option>
-            <option value="Admin">Admin</option>
-            <option value="Operator">Operator</option>
-        </select>
-        <br>
+            <div class="form-group">
+                <strong> Confirm Password: </strong>
+                <input class="form-control" type="password" name="confirmPassword">
+            </div>
 
 
-        <button class=" btn btn-success" type="submit" name="submit">Save Changes</button>
+            <div class="form-group">
+                <strong>Admin Role</strong>
+                <select class="form-control" name="adminRole" id="adminRole">
+                    <option>Select Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Operator">Operator</option>
+                </select>
+            </div>
 
-    </form>
+
+            <button class=" btn btn-success" type="submit" name="submit">Save Changes</button>
+
+        </form>
 
     </div>
 </div>
