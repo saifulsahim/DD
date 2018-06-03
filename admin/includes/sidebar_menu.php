@@ -1,6 +1,6 @@
-<aside class="main-sidebar">
+
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+
         <!-- Sidebar user panel -->
 <!--        <div class="user-panel">-->
 <!--            <div class="pull-left image">-->
@@ -26,7 +26,7 @@
         <ul class="sidebar-menu" data-widget="tree">
 <!--            <li class="header">MAIN NAVIGATION</li>-->
             <li class="active treeview">
-                <a href="../../admin/admin_master.php">
+                <a href="../admin_master.php">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     <!--                    <span class="pull-right-container">-->
                     <!--              <i class="fa fa-angle-left pull-right"></i>-->
@@ -163,6 +163,5 @@
 
 
         </ul>
-    </section>
+
     <!-- /.sidebar -->
-</aside>

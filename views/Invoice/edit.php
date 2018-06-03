@@ -12,9 +12,7 @@ $objInvoice->setData($_GET);
 $singleData = $objInvoice->view();
 
 
-
 $invoice_no = $_GET['invoice_no'];
-
 
 
 if (isset($_GET['invoice_no'])) {
@@ -40,7 +38,7 @@ $doctors = $objDoctor->index();
 
 
 //echo objpaymentinfo"<br>";
-$singleData1=$_GET['id'];
+$singleData1 = $_GET['id'];
 $objPayment = new \App\Payment\Payment();
 $total = $objPayment->indexbyid($singleData1);
 
@@ -81,7 +79,7 @@ $price = $objsubtestcategories->indexbyprice($total->sub_test_id);
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <h3 style="color: #442a8d;width:100%; font-size:"> Invoice Information Entry</h3>
             <link rel="stylesheet" href="../../resource/bootstrap/css/bootstrap.css">
             <link rel="stylesheet" href="../../resource/bootstrap/css/formstyle.css">
@@ -108,10 +106,19 @@ $price = $objsubtestcategories->indexbyprice($total->sub_test_id);
                     <div class="col-lg-4">
                         <div>
 
-                            <label for="title"> Mobile No:</label>
-                            <input class="form-control" type="text" name="mobileNo" placeholder="Set Age"
-                                   value="<?php echo $allData->mobile_no ?>">
+
+                            <label for="title">Referred By </label>
+                            <select class="form-control" name="doctorID" id="Select Doctor Name"
+                                    value="<?php echo $allData->doctor_name ?>">
+                                <option>Select Doctor</option>
+                                <?php
+                                foreach ($doctors as $doctor):
+                                    ?>
+                                    <option value="<?php echo $doctor->id; ?>"><?php echo $doctor->doctor_name; ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
+
 
                         <div>
                             <label for="title"> Sex:</label>
@@ -158,34 +165,26 @@ $price = $objsubtestcategories->indexbyprice($total->sub_test_id);
 
                         <div class="col-lg-4">
 
-
+                            <div>
                             <label for="title"> Invoice Type: </label>
                             <select name="invoiceType" class="form-control">
                                 <option>--Select--</option>
                                 <option value="income">Income</option>
-<!--                                --><?php
-//                                if ($allData == 'income') {
-//                                    ?>
-<!--                                    <option value="income" selected>Income</option>-->
-<!--                                --><?php //} ?>
+                                <!--                                --><?php
+                                //                                if ($allData == 'income') {
+                                //                                    ?>
+                                <!--                                    <option value="income" selected>Income</option>-->
+                                <!--                                --><?php //} ?>
                             </select>
+                            </div>
 
                         </div>
-                        <div>
+                        <div class="col-lg-4">
 
-
-                            <label for="title">Referred By </label>
-                            <select class="form-control" name="doctorID" id="Select Doctor Name"
-                                    value="<?php echo $allData->doctor_name ?>">
-                                <option>Select Doctor</option>
-                                <?php
-                                foreach ($doctors as $doctor):
-                                    ?>
-                                    <option value="<?php echo $doctor->id; ?>"><?php echo $doctor->doctor_name; ?></option>
-                                <?php endforeach; ?>
-                            </select>
+                            <label for="title"> Mobile No:</label>
+                            <input class="form-control" type="text" name="mobileNo" placeholder="Set Age"
+                                   value="<?php echo $allData->mobile_no ?>">
                         </div>
-
                         <div class="col-lg-4">
 
                             <label for="title"> Delivery Date:</label>
@@ -194,71 +193,74 @@ $price = $objsubtestcategories->indexbyprice($total->sub_test_id);
                         </div>
 
 
+                    </div>
+
+                    <div>
                         <div class="col-lg-4">
                             <label for="title"> Time:</label>
                             <input class="timepicker" type="text" name="time" placeholder="Set Time"
                                    value="<?php echo $allData->time ?>">
                         </div>
+                        <br>
+
+                        <hr>
+
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Test Name</td>
+                                <td>Test Quantity</td>
+                                <td>Price</td>
+                                <td>Total</td>
+
+
+                            </tr>
+                            <tr>
+                                <td><?php echo $price->test_name ?></td>
+                                <td> <?php echo $total->quantity ?></td>
+                                <td><?php echo $price->test_price ?></td>
+                                <td> <?php echo $total->total ?></td>
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">Paid</td>
+                                <td><input type="text" name="paid" class="pay" value="<?php echo $allData2->paid ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Due</td>
+                                <td><input readonly class="due_price" value="<?php echo $allData2->due ?>" type="text"
+                                           name="due"></td>
+
+                                <td></td>
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">Total</td>
+                                <td><input class="total" value="<?php echo $total->total ?>  "></td>
+
+                                <td></td>
+
+                            </tr>
+
+
+                            <input type="hidden" name="id" value="<?php echo $singleData->id ?>">
+
+                            <!--                        -->
+                            <!--                        -->
+                            <!--                        <input type="hidden" name="invoiceNo" value="-->
+                            <?php //echo $singleData->invoice_no ?><!--">-->
+                            <!---->
+                            <!--<!--                        <input type="hidden" name="id" value="-->
+                            <?php ////echo $singleData1->id ?><!--<!--">-->
+                            <!---->
 
 
                     </div>
-
-                    <hr>
-
-                    <table class="table table-bordered">
-                        <tr>
-                            <td>Test Name</td>
-                            <td>Test Quantity</td>
-                            <td>Price</td>
-                            <td>Total</td>
-
-
-                        </tr>
-                        <tr>
-                            <td><?php echo $price->test_name ?></td>
-                            <td> <?php echo $total->quantity ?></td>
-                            <td><?php echo $price->test_price ?></td>
-                            <td> <?php echo $total->total ?></td>
-
-                        </tr>
-
-                        <tr>
-                            <td colspan="3">Paid</td>
-                            <td><input type="text" name="paid" class="pay" value="<?php echo $allData2->paid ?>"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Due</td>
-                            <td><input readonly class="due_price"  value="<?php echo $allData2->due ?>" type="text"
-                                       name="due"></td>
-
-                            <td></td>
-
-                        </tr>
-
-                        <tr>
-                            <td colspan="3">Total</td>
-                            <td><input class="total" value="<?php echo $total->total ?>  "></td>
-
-                            <td></td>
-
-                        </tr>
-
-
-
-                        <input type="hidden" name="id" value="<?php echo $singleData->id ?>">
-
-<!--                        -->
-<!--                        -->
-<!--                        <input type="hidden" name="invoiceNo" value="--><?php //echo $singleData->invoice_no ?><!--">-->
-<!---->
-<!--<!--                        <input type="hidden" name="id" value="--><?php ////echo $singleData1->id ?><!--<!--">-->
-<!---->
-
-
-                </div>
-                <tr>
-                    <td> <input type="submit"  class="btn btn-primary" name="submit" value="Update"></td>
-                </tr>
+                    <tr>
+                        <td><input type="submit" class="btn btn-primary" name="submit" value="Update"></td>
+                    </tr>
 
             </form>
             <br>

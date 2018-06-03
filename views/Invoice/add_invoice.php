@@ -2,8 +2,7 @@
 
 
 require_once("../vendor/autoload.php");
-
-
+session_start();
 
 
 //if (!isset($_SESSION)) session_start();
@@ -216,6 +215,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                 </div>
+                <br>
 
                 <div class="row">
                     <div class="col-lg-4">
@@ -242,6 +242,14 @@ if (isset($_POST['submit'])) {
                     </div>
 
 
+                </div>
+
+
+
+
+
+
+                <div class="row">
 
                         <div class="col-lg-4">
 

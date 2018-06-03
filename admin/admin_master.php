@@ -18,13 +18,16 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../resource/admin_asset/dist/css/skins/_all-skins.min.css">
 
+    <!--Timepicker-->
+    <link rel="stylesheet" href="../resource/admin_asset/timepicker/jquery.timepicker.min.css">
 
     <!--Datepicker CSS-->
     <link rel="stylesheet" href="../resource/admin_asset/datepicker/css/bootstrap-datepicker3.css">
 
 
     <!-- DataTables -->
-    <link rel="stylesheet" href="../resource/admin_asset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet"
+          href="../resource/admin_asset/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Morris chart -->
     <link rel="stylesheet" href="../resource/admin_asset/bower_components/morris.js/morris.css">
     <!-- jvectormap -->
@@ -51,348 +54,166 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+    <header class="main-header">
 
-    <?php include 'includes/header.php' ?>
+        <?php include 'includes/header.php' ?>
+
+    </header>
 
     <!-- Left side column. contains the logo and sidebar -->
-    <?php include 'includes/sidebar_menu.php' ?>
+
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <?php include 'includes/sidebar_menu.php' ?>
+        </section>
+    </aside>
 
     <div class="content-wrapper">
-    <!-- Content Wrapper. Contains page content -->
+        <!-- Content Wrapper. Contains page content -->
 
 
-    <?php
+        <?php
 
 
-
-        if(isset($_GET['page'])){
-
+        if (isset($_GET['page'])) {
 
 
-            if($_GET['page'] == 'category'){
+            if ($_GET['page'] == 'category') {
                 include '../views/TestCategory/add_category.php';
-            }
-
-            elseif ($_GET['page'] == 'category_store')
-            {
+            } elseif ($_GET['page'] == 'category_store') {
                 include '../views/TestCategory/store.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_category')
-            {
+            } elseif ($_GET['page'] == 'manage_category') {
                 include '../views/TestCategory/index.php';
-            }
-
-
-            elseif ($_GET['page'] == 'view_category')
-            {
+            } elseif ($_GET['page'] == 'view_category') {
                 include '../views/TestCategory/view.php';
-            }
-
-            elseif ($_GET['page'] == 'edit_category')
-            {
+            } elseif ($_GET['page'] == 'edit_category') {
                 include '../views/TestCategory/edit.php';
-            }
-
-            elseif ($_GET['page'] == 'update_category')
-            {
+            } elseif ($_GET['page'] == 'update_category') {
                 include '../views/TestCategory/update.php';
-            }
-
-
-
-            elseif ($_GET['page'] == 'delete_category')
-            {
+            } elseif ($_GET['page'] == 'delete_category') {
                 include '../views/TestCategory/delete.php';
-            }
-
-
-
-
-            elseif ($_GET['page'] == 'add_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'add_sub_test_category') {
                 include '../views/SubTestCategory/add_category.php';
-            }
-
-            elseif ($_GET['page'] == 'store_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'store_sub_test_category') {
                 include '../views/SubTestCategory/store.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'manage_sub_test_category') {
                 include '../views/SubTestCategory/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'view_sub_test_category') {
                 include '../views/SubTestCategory/view.php';
-            }
-
-            elseif ($_GET['page'] == 'edit_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'edit_sub_test_category') {
                 include '../views/SubTestCategory/edit.php';
-            }
-
-            elseif ($_GET['page'] == 'update_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'update_sub_test_category') {
                 include '../views/SubTestCategory/update.php';
-            }
-
-
-            elseif ($_GET['page'] == 'delete_sub_test_category')
-            {
+            } elseif ($_GET['page'] == 'delete_sub_test_category') {
                 include '../views/SubTestCategory/delete.php';
-            }
-
-
-            elseif ($_GET['page'] == 'add_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'add_doctor_category') {
                 include '../views/Doctors/add_doctor.php';
-            }
-
-            elseif ($_GET['page'] == 'store_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'store_doctor_category') {
                 include '../views/Doctors/store.php';
-            }
-
-
-            elseif ($_GET['page'] == 'manage_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'manage_doctor_category') {
                 include '../views/Doctors/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'view_doctor_category') {
                 include '../views/Doctors/view.php';
-            }
-
-
-
-            elseif ($_GET['page'] == 'edit_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'edit_doctor_category') {
                 include '../views/Doctors/edit.php';
-            }
-
-            elseif ($_GET['page'] == 'update_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'update_doctor_category') {
                 include '../views/Doctors/update.php';
-            }
-
-            elseif ($_GET['page'] == 'delete_doctor_category')
-            {
+            } elseif ($_GET['page'] == 'delete_doctor_category') {
                 include '../views/Doctors/delete.php';
-            }
-
-
-            elseif ($_GET['page'] == 'add_expense_category')
-            {
+            } elseif ($_GET['page'] == 'add_expense_category') {
                 include '../views/Expenses/add_category.php';
-            }
-
-            elseif ($_GET['page'] == 'store_expense_category')
-            {
+            } elseif ($_GET['page'] == 'store_expense_category') {
                 include '../views/Expenses/store.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_expense_category')
-            {
+            } elseif ($_GET['page'] == 'manage_expense_category') {
                 include '../views/Expenses/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_expense_category')
-            {
+            } elseif ($_GET['page'] == 'view_expense_category') {
                 include '../views/Expenses/view.php';
-            }
-
-            elseif ($_GET['page'] == 'edit_expense_category')
-            {
+            } elseif ($_GET['page'] == 'edit_expense_category') {
                 include '../views/Expenses/edit.php';
-            }
-
-            elseif ($_GET['page'] == 'update_expense_category')
-            {
+            } elseif ($_GET['page'] == 'update_expense_category') {
                 include '../views/Expenses/update.php';
-            }
-
-            elseif ($_GET['page'] == 'delete_expense_category')
-            {
+            } elseif ($_GET['page'] == 'delete_expense_category') {
                 include '../views/Expenses/delete.php';
-            }
-
-
-
-
-            elseif ($_GET['page'] == 'add_invoice')
-            {
+            } elseif ($_GET['page'] == 'add_invoice') {
                 include '../views/Invoice/add_invoice.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_invoice')
-            {
+            } elseif ($_GET['page'] == 'manage_invoice') {
                 include '../views/Invoice/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_invoice')
-            {
+            } elseif ($_GET['page'] == 'view_invoice') {
                 include '../views/Invoice/view.php';
-            }
-
-            elseif ($_GET['page'] == 'edit_invoice')
-            {
+            } elseif ($_GET['page'] == 'edit_invoice') {
                 include '../views/Invoice/edit.php';
-            }
-
-            elseif ($_GET['page'] == 'update_invoice')
-            {
+            } elseif ($_GET['page'] == 'update_invoice') {
                 include '../views/Invoice/update.php';
-            }
-
-
-            elseif ($_GET['page'] == 'delete_invoice')
-            {
+            } elseif ($_GET['page'] == 'delete_invoice') {
                 include '../views/Invoice/delete.php';
-            }
-
-            elseif ($_GET['page'] == 'add_custom_invoice')
-            {
+            } elseif ($_GET['page'] == 'add_custom_invoice') {
                 include '../views/CustomInvoice/add_custom_invoice.php';
             }
 
-            if($_GET['page'] == 'manage_custom_invoice')
-            {
+            if ($_GET['page'] == 'manage_custom_invoice') {
                 include '../views/CustomInvoice/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_custom_invoice') {
+            } elseif ($_GET['page'] == 'view_custom_invoice') {
 
                 include '../views/CustomInvoice/view.php';
-            }
-
-            elseif ($_GET['page'] == 'print_custom_invoice') {
+            } elseif ($_GET['page'] == 'print_custom_invoice') {
                 include '../views/CustomInvoice/print_invoice_details.php';
 
-            }
-
-            elseif ($_GET['page'] == 'delete_custom_invoice') {
+            } elseif ($_GET['page'] == 'delete_custom_invoice') {
                 include '../views/CustomInvoice/delete.php';
 
-            }
-
-
-            elseif ($_GET['page'] == 'add_custom_doctor_invoice') {
+            } elseif ($_GET['page'] == 'add_custom_doctor_invoice') {
                 include '../views/CustomDoctorInvoice/add_custom_doctor_invoice.php';
 
-            }
-
-            elseif ($_GET['page'] == 'manage_custom_doctor_invoice')
-            {
+            } elseif ($_GET['page'] == 'manage_custom_doctor_invoice') {
                 include '../views/CustomDoctorInvoice/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_custom_doctor_invoice')
-            {
+            } elseif ($_GET['page'] == 'view_custom_doctor_invoice') {
                 include '../views/CustomDoctorInvoice/view.php';
-            }
-
-            elseif ($_GET['page'] == 'print_doctor_invoice_details')
-            {
+            } elseif ($_GET['page'] == 'print_doctor_invoice_details') {
                 include '../views/CustomDoctorInvoice/print_invoice_details.php';
-            }
-
-            elseif ($_GET['page'] == 'delete_custom_doctor_invoice')
-            {
+            } elseif ($_GET['page'] == 'delete_custom_doctor_invoice') {
                 include '../views/CustomDoctorInvoice/delete.php';
-            }
-
-
-            elseif ($_GET['page'] == 'add_income_report')
-            {
+            } elseif ($_GET['page'] == 'add_income_report') {
                 include '../views/IncomeReport/add_income_report.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_income_report')
-            {
+            } elseif ($_GET['page'] == 'manage_income_report') {
                 include '../views/IncomeReport/index.php';
-            }
-
-
-            elseif ($_GET['page'] == 'add_expense_report')
-            {
+            } elseif ($_GET['page'] == 'add_expense_report') {
                 include '../views/ExpenseReport/add_expense_report.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_expense_report')
-            {
+            } elseif ($_GET['page'] == 'manage_expense_report') {
                 include '../views/ExpenseReport/index.php';
-            }
-
-            elseif ($_GET['page'] == 'total_report')
-            {
+            } elseif ($_GET['page'] == 'total_report') {
                 include '../views/TotalReport/add_total_report.php';
-            }
-
-            elseif ($_GET['page'] == 'manage_total_report')
-            {
+            } elseif ($_GET['page'] == 'manage_total_report') {
                 include '../views/TotalReport/index.php';
-            }
-
-
-            elseif ($_GET['page'] == 'add_settings')
-            {
+            } elseif ($_GET['page'] == 'add_settings') {
                 include '../views/Settings/add_settings.php';
-            }
-
-            elseif ($_GET['page'] == 'add_admin')
-            {
+            } elseif ($_GET['page'] == 'add_admin') {
                 include '../views/AddAdmin/add_admin.php';
-            }
-
-            elseif ($_GET['page'] == 'store_admin')
-            {
+            } elseif ($_GET['page'] == 'store_admin') {
                 include '../views/AddAdmin/store.php';
-            }
-
-
-            elseif ($_GET['page'] == 'manage_admin')
-            {
+            } elseif ($_GET['page'] == 'manage_admin') {
                 include '../views/AddAdmin/index.php';
-            }
-
-            elseif ($_GET['page'] == 'view_admin')
-            {
+            } elseif ($_GET['page'] == 'view_admin') {
                 include '../views/AddAdmin/view.php';
-            }
-
-
-            elseif ($_GET['page'] == 'edit_admin')
-            {
+            } elseif ($_GET['page'] == 'edit_admin') {
                 include '../views/AddAdmin/edit.php';
-            }
-
-
-            elseif ($_GET['page'] == 'delete_admin')
-            {
+            } elseif ($_GET['page'] == 'delete_admin') {
                 include '../views/AddAdmin/delete.php';
             }
 
 
-        }else{
-            include  'includes/home_content.php';
+        } else {
+            include 'includes/home_content.php';
         }
 
 
-
-
-
-    ?>
-    <!-- /.content-wrapper -->
+        ?>
+        <!-- /.content-wrapper -->
 
         <!-- /.content -->
     </div>
-    <?php include 'includes/footer.php'?>
+    <?php include 'includes/footer.php' ?>
     <!-- Control Sidebar -->
-<!--    -->
+    <!--    -->
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
@@ -418,6 +239,8 @@
 <!-- DataTables -->
 <script src="../resource/admin_asset/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 
+<!-- TimePicker JS-->
+<script src="../resource/admin_asset/timepicker/jquery.timepicker.min.js"></script>
 
 <!--Datepicker JS-->
 <script src="../resource/admin_asset/datepicker/js/bootstrap-datepicker.js"></script>
@@ -448,15 +271,12 @@
     $(document).ready(function () {
         $('#example1').DataTable({
 
-            'paging'      : true,
-
-
+            'paging': true,
 
 
         });
     });
 </script>
-
 
 
 <script>
@@ -467,6 +287,12 @@
 
 </script>
 
+<script>
+    $(document).ready(function () {
+        $('input.timepicker').timepicker({});
+    });
+
+</script>
 
 </body>
 </html>
