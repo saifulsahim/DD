@@ -1,98 +1,125 @@
 <?php
-require_once("vendor/autoload.php");
+
 session_start();
-use App\Model\Database;
+require_once("vendor/autoload.php");
 
 
-//session_start();
+    $admin_id = isset($_SESSION['admin_id']);
+//   echo $admin_id;
+//    exit();
 
-$admin_id =isset( $_SESSION['admin_id']);
-//var_dump($admin_id);
-if($admin_id){
-    \App\Utility\Utility::redirect("admin/admin_master.php");
+    if($admin_id)
+    {
+        header('Location:admin/admin_master.php');
+    }
 
-}
+    if(isset($_POST['btn']))
+    {
+        //require 'src/AddAdmin/AddAdmin.php';
+        $objAdmin = new \App\AddAdmin\AddAdmin();
+        $message = $objAdmin->admin_login_check($_POST);
 
-//$objAdmin = new App\AddAdmin\AddAdmin();
-//$admin_id = $_SESSION['admin_id'];
-//if($admin_id == NULL)
-//{
-//    //\App\Utility\Utility::redirect("index.php");
-//}
-
-//
-//$objAdmin = new App\AddAdmin\AddAdmin();
-//$admin_id = isset($_SESSION['id']);
-//if($admin_id)
-//{
-//    \App\Utility\Utility::redirect("../../resource/Dashboard.php");
-//}
-//
+    }
 
 
-if (isset($_POST['login'])) {
-
-//if (isset($_POST['login'])) {value="Login"
-    $objAdmin = new App\AddAdmin\AddAdmin();
-    $message = $objAdmin->admin_login_check();
-
-
-//
-//    $db = new Database();
-//
-//    $email = $_POST['email'];
-//    $password = $_POST['password'];
-//
-//
-//    $query = $db->DBH->prepare("SELECT * FROM add_admin WHERE  email = '$email' AND password = '$password' ");
-//    //echo "SELECT COUNT (`id`) FROM add_admin WHERE `email` = `$email`AND `password` = $password ";
-//
-//    $query->execute();
-//
-//    $count = $query->fetch();
-//
-//
-//
-//    if (!empty($count)) {
-//        $_SESSION['email'] = $email;
-//        $_SESSION['admin_id'] = $count['id'];
-//
-//        \App\Utility\Utility::redirect("resource/Dashboard.php");
-//}
-////
-//
-
-}
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Diagonstic Center</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Diagonstic Management | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="resource/admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="resource/admin_asset/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="resource/admin_asset/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="resource/admin_asset/dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="resource/admin_asset/plugins/iCheck/square/blue.css">
 
-    <link rel="stylesheet" href="resource/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="resource/bootstrap/css/formstyle.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body>
-<br/>
-<div class="container" style="width:500px;">
-<div class="col-md-10">
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="">Diagonstic Management</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        <h5 style="text-align: center;"><?php if(isset($message)) {echo $message;}?></h5>
 
-    <form action="" method="post">
-        <h2>Login into your account</h2>
-        <h2><?php if(isset($message)) {echo $message;} ?></h2>
-        <label>E-mail</label>
-        <input type="email" name="email" class="form-control"/>
-        <br/>
-        <label>Password</label>
-        <input type="password" name="password" class="form-control"/>
-        <br/>
-        <input type="submit" name="login" class="btn btn-info" />
+        <form action="" method="post">
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox"> Remember Me
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" name="btn" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
 
+        <div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+                Facebook</a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+                Google+</a>
+        </div>
+        <!-- /.social-auth-links -->
 
-    </form>
+        <a href="#">I forgot my password</a><br>
+        <a href="register.html" class="text-center">Register a new membership</a>
+
+    </div>
+    <!-- /.login-box-body -->
 </div>
-</div>
-<br/>
+<!-- /.login-box -->
+
+<!-- jQuery 3 -->
+<script src="resource/admin_asset/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="resource/admin_asset/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="resource/admin_asset/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+    });
+</script>
 </body>
 </html>

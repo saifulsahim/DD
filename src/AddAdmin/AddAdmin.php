@@ -1,14 +1,5 @@
 <?php
 
-
-
-/**
- * Created by PhpStorm.
- * User: SAHIM
- * Date: 17-Mar-18
- * Time: 10:08 AM
- */
-
 namespace App\AddAdmin;
 use App\Utility\Utility;
 use PDO;
@@ -273,7 +264,7 @@ class AddAdmin extends Database
     }
 
 //
-    public function admin_login_check()
+    public function admin_login_check($postArray)
     {
 
 //        echo '<pre>';
@@ -284,6 +275,8 @@ class AddAdmin extends Database
 
         $email = $_POST['email'];
         $password = md5($_POST['password']);
+//        echo $password;
+//        exit();
 
 
         $sqlQuery = "SELECT * from add_admin WHERE email= '$email' AND password = '$password' LIMIT 1 ";
@@ -294,12 +287,18 @@ class AddAdmin extends Database
 
         $admin_info = $STH->fetch();
 
+//        echo '<pre>';
+//        print_r($admin_info);
+//        exit();
+
 
 
 
         if ($admin_info) {
+            session_start();
+            $_SESSION['admin_name']=$admin_info->admin_name;
             $_SESSION['admin_id']=$admin_info->id;
-            Utility::redirect("resource/Dashboard.php");
+            Utility::redirect("admin/admin_master.php");
 
 
         } else {
@@ -309,6 +308,13 @@ class AddAdmin extends Database
         }
 //
 //
+       }
+
+       public function logout()
+       {
+           unset($_SESSION['admin_id']);
+           unset($_SESSION['admin_name']);
+           header('Location:../index.php');
        }
 
     }

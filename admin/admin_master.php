@@ -1,3 +1,31 @@
+<?php
+session_start();
+require_once("../vendor/autoload.php");
+
+    $admin_id = $_SESSION['admin_id'];
+//    echo $admin_id;
+//    exit();
+
+    if($admin_id == NULL)
+    {
+        header('Location:../index.php');
+    }
+
+    if(isset($_GET['status']))
+    {
+        if($_GET['status'] == 'logout')
+        {
+            //require '../src/AddAdmin/AddAdmin.php';
+            $obj_admin = new \App\AddAdmin\AddAdmin();
+            $obj_admin->logout();
+        }
+    }
+
+//?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,6 +92,15 @@
 
     <aside class="main-sidebar">
         <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../resource/admin_asset/dist/img/admin.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p> <?php echo $_SESSION['admin_name']?></p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
             <?php include 'includes/sidebar_menu.php' ?>
         </section>
     </aside>

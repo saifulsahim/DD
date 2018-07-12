@@ -1,4 +1,26 @@
+<?php
 
+require_once("../vendor/autoload.php");
+
+//session_start();
+
+$objTestCategory = new App\TestCategory\TestCategory();
+
+$objSubTestCategory = new App\SubTestCategory\SubTestCategory();
+
+$objDoctors = new App\Doctors\Doctors();
+
+$objExpenses = new App\Expenses\Expenses();
+
+
+//$admin_id = $_SESSION['admin_id'];
+//if($admin_id == NULL)
+//{
+//    //\App\Utility\Utility::redirect("index.php");
+//}
+
+
+?>
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
@@ -19,14 +41,15 @@
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3><?php $row_count = $objTestCategory->count_rows();
+                            echo $row_count ?></h3>
 
-                        <p>New Orders</p>
+                        <p>Test Categories</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="admin_master.php?page=manage_category" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -34,14 +57,15 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3><?php $row_count = $objSubTestCategory->count_rows();
+                            echo $row_count ?></h3>
 
-                        <p>Bounce Rate</p>
+                        <p>Sub Test Categories</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="admin_master.php?page=manage_sub_test_category" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -49,14 +73,15 @@
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3><?php $row_count = $objDoctors->count_rows();
+                            echo $row_count ?></h3>
 
-                        <p>User Registrations</p>
+                        <p>Doctors</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="admin_master.php?page=manage_doctor_category" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -64,14 +89,15 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>65</h3>
+                        <h3><?php $row_count = $objExpenses->count_rows();
+                            echo $row_count ?></h3>
 
-                        <p>Unique Visitors</p>
+                        <p>Expenses</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="admin_master.php?page=manage_expense_category" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
