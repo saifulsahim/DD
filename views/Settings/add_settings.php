@@ -35,32 +35,48 @@ require_once("../vendor/autoload.php");
     <form  action="store.php" method="post" enctype="multipart/form-data">
 
 
-        <strong> Name:</strong>
-        <input type="text" name="name">
-        <br>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control"  placeholder="Enter name">
+        </div>
+
+
+        <div class="form-group">
+            <label>E-mail:</label>
+            <input type="email" name="email" class="form-control"  placeholder="Enter mail">
+        </div>
+
 
         <strong> Address: </strong>
         <textarea rows="2" class="form-control" name="address"></textarea>
         <br>
 
-        <strong> E-mail: </strong>
-        <input type="email" name="email">
-        <br>
+<!--        <strong> E-mail: </strong>-->
+<!--        <input type="email" name="email">-->
+<!--        <br>-->
 
-        <strong> Mobile No: </strong>
-        <input type="text" name="mobileNO">
-        <br>
+        <div class="form-group">
+            <label> Mobile No: </label>
+            <input type="text" name="mobileNO" class="form-control"  placeholder="Enter Mobile No">
+        </div>
+
+<!--        <strong> Mobile No: </strong>-->
+<!--        <input type="text" name="mobileNO">-->
+<!--        <br>-->
 
 
-        <strong> Logo Image: </strong>
+        <div class="form-group">
+           <label> Logo Image: </label>
         <input type="file" accept=".png, .jpg, .jpeg" name="logoImage">
-        <br>
+        </div>
 
 
 
-        <strong> Currency: </strong>
+        <div class="form-group">
+            <label>Currency: </label>
         <input type="text" name="currency">
-        <br>
+        </div>
 
 
 
@@ -73,9 +89,9 @@ require_once("../vendor/autoload.php");
         <br>
 
 
-        <strong> Initial Balance</strong>
+        <div class="form-group"> Initial Balance
         <input  type="text" name="initialBalance">
-        <br>
+        </div>
 
 
 

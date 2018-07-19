@@ -85,8 +85,6 @@ require_once("../vendor/autoload.php");
 
 
 
-
-
         <strong> Contact Address: </strong>
         <textarea rows="2" class="form-control" name="contactAddress"></textarea>
         <br>
